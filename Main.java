@@ -83,10 +83,10 @@ public class Main {
                     }
                     break;
                 case 5:
-                    First cleopatra5 = new First("Клеопатра");
-                    First pushkin5 = new First("Пушкин", "Александр", "Сергеевич");
-                    First mayakovskiy5 = new First("Маяковский", "Владимир");
-                    First bonifatievich5 = new First("Христофор", "Бонифатьевич");
+                    FirstNext cleopatra5 = new FirstNext("Клеопатра");
+                    FirstNext pushkin5 = new FirstNext("Александр", "Пушкин", "Сергеевич");
+                    FirstNext mayakovskiy5 = new FirstNext("Владимир", "Маяковский");
+                    FirstNext bonifatievich5 = new FirstNext("Христофор", "Бонифатьевич");
                     System.out.println(cleopatra5.toString());
                     System.out.println(pushkin5.toString());
                     System.out.println(mayakovskiy5.toString());
