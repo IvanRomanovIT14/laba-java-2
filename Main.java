@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -11,30 +10,34 @@ public class Main {
             switch (choice) {
                 case 1:
                     First cleopatra1 = new First("Клеопатра");
-                    First pushkin1 = new First("Пушкин", "Александр", "Сергеевич");
+                    First pushkin1 = new First("Пушкин", "Александр",
+                            "Сергеевич");
                     First mayakovskiy1 = new First("Маяковский", "Владимир");
                     System.out.println(cleopatra1.toString());
                     System.out.println(pushkin1.toString());
                     System.out.println(mayakovskiy1.toString());
-                    String surname1 = input(scanner, "Фамилию");
-                    String name1 = input(scanner, "Имя");
-                    String patronymic1 = input(scanner, "Отчество");
+                    String surname1 = InputHelper.input(scanner, "Фамилию");
+                    String name1 = InputHelper.input(scanner, "Имя");
+                    String patronymic1 = InputHelper.input(scanner, "Отчество");
                     First human = new First(surname1, name1, patronymic1);
                     System.out.println("Итоговое имя: " + human);
                     break;
                 case 2:
                     First cleopatra21 = new First("Клеопатра ");
                     Person cleopatra22 = new Person("", 152);
-                    System.out.println("Человек с именем " + cleopatra21.toString() + "и ростом " + cleopatra22);
+                    System.out.println("Человек с именем " + cleopatra21.toString() + "и ростом " +
+                            cleopatra22);
                     First pushkin21 = new First("Пушкин Александр Сергеевич ");
                     Person pushkin22 = new Person("", 167);
-                    System.out.println("Человек с именем " + pushkin21.toString() + "и ростом " + pushkin22);
+                    System.out.println("Человек с именем " + pushkin21.toString() + "и ростом " +
+                            pushkin22);
                     First mayakovsky21 = new First("Маяковский Владимир ");
                     Person mayakovsky22 = new Person("", 189);
-                    System.out.println("Человек с именем " + mayakovsky21.toString() + "и ростом " + mayakovsky22);
-                    String surname2 = input(scanner, "Фамилию");
-                    String name2 = input(scanner, "Имя");
-                    String patronymic2 = input(scanner, "Отчество");
+                    System.out.println("Человек с именем " + mayakovsky21.toString() + "и ростом "
+                            + mayakovsky22);
+                    String surname2 = InputHelper.input(scanner, "Фамилию");
+                    String name2 = InputHelper.input(scanner, "Имя");
+                    String patronymic2 = InputHelper.input(scanner, "Отчество");
                     System.out.print("Введите рост: ");
                     int height = scanner.nextInt();
                     First human2 = new First(surname2, name2, patronymic2);
@@ -93,15 +96,18 @@ public class Main {
                     PersonNew lev6 = new PersonNew("Лев", 170);
                     First sergeyName = new First("Пушкин", "Сергей");
                     PersonNew sergey6 = new PersonNew(sergeyName, 168, lev6);
-                    PersonNew alexander6 = new PersonNew(new First(null, "Александр"), 167, sergey6);
+                    PersonNew alexander6 = new PersonNew(new First(null, "Александр"), 167,
+                            sergey6);
                     System.out.println(lev6);
                     System.out.println(sergey6);
                     System.out.println(alexander6);
                     if (sergey6.getFather() != null) {
-                        System.out.println("Отец Сергея: " + sergey6.getFather().getName().toString());
+                        System.out.println("Отец Сергея: " + sergey6.getFather().getName().
+                                toString());
                     }
                     if (alexander6.getFather() != null) {
-                        System.out.println("Отец Александра: " + alexander6.getFather().getName().toString());
+                        System.out.println("Отец Александра: " + alexander6.getFather().getName().
+                                toString());
                     }
                     break;
                 case 7:
@@ -115,20 +121,6 @@ public class Main {
             }
         } else {
             System.out.println("Вводить можно только число 1-7!");
-        }
-    }
-
-    private static String input(Scanner scanner, String s) {
-        while (true) {
-            System.out.println("Введите " + s + ":");
-            String m = scanner.nextLine();
-            if (m.isEmpty())
-                return "";
-            if (First.Correct(m)) {
-                return m;
-            } else {
-                System.out.println("Можно вводить только буквы, - и пробелы !");
-            }
         }
     }
 }
